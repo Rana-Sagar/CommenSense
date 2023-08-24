@@ -10,7 +10,14 @@ const authRouters=require('./routes/auth');
 const Image=require('./models/Image')
 const path = require('path');
 const app = express();
-app.use(cors());
+app.use(cors(
+  {
+    origin:["https://deploye-mern.vercel.app"],
+    methods:["POST","GET"],
+    credentials:true
+    
+  }
+));
 app.use(express.json());
 app.use('/auth',authRouters);
 // After your /upload endpoint
