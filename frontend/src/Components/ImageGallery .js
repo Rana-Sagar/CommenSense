@@ -5,7 +5,7 @@ const ImageGallery = () => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/images')
+    axios.get('https://commen-sense.vercel.app/images')
       .then(response => {
         setImages(response.data);
       })
@@ -16,7 +16,7 @@ const ImageGallery = () => {
 
   const handleImageDownload = async (imageUrl) => {
     try {
-      const response = await axios.get(`http://localhost:8080/${imageUrl}`, { responseType: 'blob' });
+      const response = await axios.get(`https://commen-sense.vercel.app/${imageUrl}`, { responseType: 'blob' });
   
       const blob = new Blob([response.data], { type: 'image/jpeg' }); // Adjust the MIME type if needed
       const url = URL.createObjectURL(blob);
@@ -38,7 +38,7 @@ const ImageGallery = () => {
       {images.map((image, index) => (
         <div key={index} className="gallery-item">
           <img
-            src={`http://localhost:8080/${image.imageUrl}`}
+            src={`https://commen-sense.vercel.app/${image.imageUrl}`}
             alt="gallery"
             className="gallery-image"
           />
