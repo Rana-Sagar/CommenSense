@@ -11,7 +11,7 @@ function Signin() {
 
   const handleSignup = async () => {
     try {
-      const response = await axios.post('http://localhost:8080/auth/signup', {
+      const response = await axios.post('https://commen-sense.vercel.app/auth/signup', {
         fullname,
         email,
         password
