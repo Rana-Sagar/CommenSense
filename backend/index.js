@@ -1,5 +1,5 @@
 //index.js
-require("dotenv").config();
+
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
@@ -24,7 +24,7 @@ app.use('/auth',authRouters);
 app.use('/images', express.static('Images'));
 
 //connect to mongodb
-mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect("mongodb+srv://sagar:xe4fuHFSID3Y2o3s@cluster0.yyhgt1n.mongodb.net/upload", {useNewUrlParser: true, useUnifiedTopology: true})
 .then(()=>console.log('MongoDB connected'))
 .catch(err=>console.log(err));
 // Set up multer for image upload
