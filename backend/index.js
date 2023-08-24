@@ -12,7 +12,7 @@ const path = require('path');
 const app = express();
 app.use(cors(
   {
-    origin:["https://deploye-mern.vercel.app"],
+    origin:["https://commen-sense.vercel.app"],
     methods:["POST","GET"],
     credentials:true
     
