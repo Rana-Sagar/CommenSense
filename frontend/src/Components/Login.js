@@ -10,7 +10,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('https://commen-sense.vercel.app/auth/login', {
+      const response = await axios.post('https://commen-sense.vercel.app/login', {
         email,
         password
       });
