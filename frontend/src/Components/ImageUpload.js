@@ -14,7 +14,7 @@ const ImageUpload = () => {
     const formData = new FormData();
     formData.append('image', selectedFile);
 
-    axios.post('http://localhost:8080/upload', formData)
+    axios.post('https://commen-sense.vercel.app/upload', formData)
       .then(response => {
         console.log(response.data);
         // Handle success or show a message to the user
