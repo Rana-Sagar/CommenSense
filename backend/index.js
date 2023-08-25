@@ -5,7 +5,7 @@ const router = express.Router();
 const multer = require('multer');
 const bcrypt=require('bcryptjs');
 const jwt=require('jsonwebtoken');
-const User=require('../models/User');
+const User=require('./models/User');
 const cors=require('cors');
 const mongoose=require('mongoose');
 const checkAuth=require('./middleware/check-auth');
@@ -13,6 +13,7 @@ const authRouters=require('./routes/auth');
 const Image=require('./models/Image')
 const path = require('path');
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 app.use('/auth',authRouters);
@@ -50,8 +51,8 @@ app.post( '/signup',async(req,res)=>{
     } catch (error) {
         res.status(500).json({message:'Something went wrong'});
     }
-}
-)
+})
+
   app.post('/upload',upload.single('image'),async(req,res)=>{
     // res.send('Image uploaded successfully');
     try {
