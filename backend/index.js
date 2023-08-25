@@ -36,22 +36,7 @@ mongoose.connect("mongodb+srv://sagar:xe4fuHFSID3Y2o3s@cluster0.yyhgt1n.mongodb.
     }
   })
   const upload=multer({storage:storage});
-app.post( '/signup',async(req,res)=>{
-    try {
-        const {fullName,email,password}=req.body;
-        const hashedPassword=await bcrypt.hash(password,10);
-        const user=await User.create({
-            fullName,
-            email,
-            password:hashedPassword,
-            subscriptionTier:'free',//set default tier to free
-        });
-        await user.save();
-        res.status(201).json({message:'User created successfully'});
-    } catch (error) {
-        res.status(500).json({message:'Something went wrong'});
-    }
-})
+
 
   app.post('/upload',upload.single('image'),async(req,res)=>{
     // res.send('Image uploaded successfully');
